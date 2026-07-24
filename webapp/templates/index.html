@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>礼服选品 Agent</title>
+    <link rel="stylesheet" href="/static/app.css?v=20260722-5">
+  </head>
+  <body>
+    <main class="shell">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">DRESS INTELLIGENCE · PHASE ONE</p>
+          <h1>礼服选品 Agent</h1>
+          <p class="subtitle">从趋势榜单中筛出值得打版和跟款的候选款式。</p>
+        </div>
+        <div class="run-controls">
+          <div class="site-picker">
+            <div class="site-picker-heading">
+              <strong>选择抓取网站</strong>
+              <label><input id="select-all-sites" type="checkbox" checked> 全选</label>
+            </div>
+            <div id="site-options" class="site-options"></div>
+          </div>
+          <button id="run-button" class="primary-button" type="button">
+            <span class="button-dot"></span>开始抓取
+          </button>
+        </div>
+      </header>
+
+      <section class="status-card" aria-live="polite">
+        <div>
+          <span id="status-badge" class="status-badge idle">等待运行</span>
+          <h2 id="status-title">Agent 已就绪</h2>
+          <p id="status-detail">点击右上角按钮，抓取全部已配置的 Prom Dress 站点。</p>
+        </div>
+        <div class="metric">
+          <span>数据库商品</span>
+          <strong id="total-count">—</strong>
+        </div>
+      </section>
+
+      <nav class="tabs" aria-label="内容切换">
+        <button class="tab active" data-panel="products" type="button">候选商品</button>
+        <button class="tab" data-panel="reports" type="button">历史报告</button>
+      </nav>
+
+      <section id="products-panel" class="panel active">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">RANKED CANDIDATES</p>
+            <h2>最新选品结果</h2>
+          </div>
+          <button id="refresh-button" class="ghost-button" type="button">刷新数据</button>
+        </div>
+        <div id="category-filters" class="category-filters" aria-label="按场景筛选"></div>
+        <nav id="product-pagination-top" class="pagination" aria-label="选品结果顶部分页"></nav>
+        <div id="product-grid" class="product-grid"></div>
+        <nav id="product-pagination-bottom" class="pagination" aria-label="选品结果底部分页"></nav>
+        <div id="product-empty" class="empty-state" hidden>
+          <h3>还没有商品数据</h3>
+          <p>运行一次 Agent 后，选品结果会显示在这里。</p>
+        </div>
+      </section>
+
+      <section id="reports-panel" class="panel">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">DAILY ARCHIVE</p>
+            <h2>历史 Markdown 报告</h2>
+          </div>
+        </div>
+        <div id="report-list" class="report-list"></div>
+        <div id="report-empty" class="empty-state" hidden>
+          <h3>还没有日报</h3>
+          <p>首次抓取完成后会自动生成 Markdown 和 JSON。</p>
+        </div>
+      </section>
+    </main>
+    <div id="toast" class="toast" role="status"></div>
+    <script src="/static/app.js?v=20260722-5" defer></script>
+  </body>
+</html>

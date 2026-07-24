@@ -1,0 +1,10 @@
+.venv/
+__pycache__/
+*.py[cod]
+data/*.db
+reports/*.md
+reports/*.json
+public-tunnel.log
+webapp.err.log
+webapp.out.log
+tools/cloudflared.exe

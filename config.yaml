@@ -1,0 +1,148 @@
+database:
+  path: data/products.db
+
+reports:
+  directory: reports
+  top_n: 30
+
+scoring:
+  weights:
+    rank_position: 0.25
+    review_count: 0.15
+    like_or_save_count: 0.25
+
+scraping:
+  timeout_seconds: 20
+  delay_seconds:
+    min: 1.0
+    max: 3.0
+  user_agent: "DressSelectionAgent/0.1 (+contact: configure-before-production)"
+
+sites:
+  americanthreads:
+    enabled: true
+    base_url: https://www.shopamericanthreads.com
+    collection_urls:
+      - https://www.shopamericanthreads.com/collections/prom
+    max_products: 60
+  ohpolly:
+    enabled: true
+    base_url: https://us.ohpolly.com
+    collection_urls:
+      - https://us.ohpolly.com/collections/prom-dresses
+    json_collection_urls:
+      - https://us.ohpolly.com/collections/prom-dresses/products.json?limit=60
+    max_products: 60
+  meshki:
+    enabled: true
+    base_url: https://www.meshki.us
+    collection_urls:
+      - https://www.meshki.us/collections/prom-dresses
+    max_products: 60
+  princesspolly:
+    enabled: true
+    base_url: https://us.princesspolly.com
+    collection_urls:
+      - https://us.princesspolly.com/collections/prom-dresses
+    max_products: 60
+  revolve:
+    enabled: true
+    base_url: https://www.revolve.com
+    collection_urls:
+      - https://www.revolve.com/v/prom-dresses
+    product_url_patterns: ["/product/", "/dp/"]
+    max_products: 60
+  lulus:
+    enabled: true
+    base_url: https://www.lulus.com
+    collection_urls:
+      - https://www.lulus.com/categories/701_693/prom-dresses.html
+    max_products: 60
+  windsor:
+    enabled: true
+    base_url: https://www.windsorstore.com
+    collection_urls:
+      - https://www.windsorstore.com/collections/occasions-prom-dresses
+    max_products: 60
+  everpretty:
+    enabled: true
+    base_url: https://www.ever-pretty.com
+    collection_urls:
+      - https://www.ever-pretty.com/collections/prom-dresses
+    max_products: 60
+  stacees:
+    enabled: true
+    base_url: https://www.stacees.com
+    collection_urls:
+      - https://www.stacees.com/list/prom-dresses
+    product_url_patterns: ["/product/", "/products/"]
+    max_products: 60
+  jjshouse:
+    enabled: true
+    base_url: https://www.jjshouse.com
+    collection_urls:
+      - https://www.jjshouse.com/all/prom-dresses
+    product_url_patterns: ["/product/", "-p"]
+    max_products: 60
+  promgirl:
+    enabled: true
+    base_url: https://www.promgirl.com
+    collection_urls:
+      - https://www.promgirl.com/collections/prom-dresses
+    json_collection_urls:
+      - https://www.promgirl.com/collections/prom-dresses/products.json?limit=60
+    max_products: 60
+  azazie:
+    enabled: true
+    base_url: https://www.azazie.com
+    collection_urls:
+      - https://www.azazie.com/all/atelier-prom-dresses
+    max_products: 60
+  newyorkdress:
+    enabled: true
+    base_url: https://www.newyorkdress.com
+    collection_urls:
+      - https://www.newyorkdress.com/collections/prom-dresses
+    json_collection_urls:
+      - https://www.newyorkdress.com/collections/prom-dresses/products.json?limit=60
+    max_products: 60
+  sherrihill:
+    enabled: true
+    base_url: https://www.sherrihill.com
+    collection_urls:
+      - https://www.sherrihill.com/collections/prom-dresses
+    product_url_patterns: ["/dress/", "/products/"]
+    max_products: 60
+  macduggal:
+    enabled: true
+    base_url: https://macduggal.com
+    collection_urls:
+      - https://macduggal.com/collections/prom
+    max_products: 60
+  couturecandy:
+    enabled: true
+    base_url: https://www.couturecandy.com
+    collection_urls:
+      - https://www.couturecandy.com/collections/prom-dresses
+    max_products: 60
+  babyboo:
+    enabled: true
+    base_url: https://www.babyboofashion.com
+    collection_urls:
+      - https://www.babyboofashion.com/collections/prom-dresses
+    max_products: 60
+  thedressoutlet:
+    enabled: true
+    base_url: https://www.thedressoutlet.com
+    collection_urls:
+      - https://www.thedressoutlet.com/collections/prom-dresses
+    max_products: 60
+  simplydresses:
+    enabled: true
+    base_url: https://www.simplydresses.com
+    collection_urls:
+      - https://www.simplydresses.com/collections/prom-dresses
+    product_url_patterns: ["/products/", "/product/", ".html"]
+    max_products: 60
+
+# All configured pages target the "prom dress" keyword or dedicated Prom collection.
